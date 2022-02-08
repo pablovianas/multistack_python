@@ -1,6 +1,6 @@
 from unicodedata import decimal
 from django import forms
-from .models import Service
+from ..models import Service
 from decimal import Decimal
 
 class ServiceForm(forms.ModelForm):
