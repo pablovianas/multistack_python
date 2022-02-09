@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% load bootstrap4 %}
+
+{% block title %}
+User Register
+{% endblock %}
+
+
+{% block content %}
+<div class="card card-primary">
+    <div class="card-header">
+        <div class="card-title">User Register</div>
+    </div>
+    <div class="card-body">
+        <form method="post">
+            {% csrf_token %}
+            <div class="form-group">
+                {%bootstrap_field user_form.username%}
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        {%bootstrap_field user_form.password1%}
+                    </div>
+                </div>
+                
+                <div class="col-md-6">
+                    <div class="form-group">
+                        {%bootstrap_field user_form.password2%}
+                    </div>
+                </div>
+
+            </div>
+
+
+
+            <button class="btn btn-primary" type="submit">Register</button>
+        </form>
+
+    </div>
+
+
+</div>
+
+
+{% endblock %}
