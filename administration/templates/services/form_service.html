@@ -9,7 +9,13 @@
 {% block content %}
     <div class="card card-primary">
         <div class="card-header">
-            <div class="card-title">Service register</div>
+            <div class="card-title">
+                {% if request.resolver_match.url_name == 'service_register' %}
+                    Service Register
+                {% else %}
+                    Service Edit
+                {% endif %}
+            </div>
         </div>
         <div class="card-body">
             <form method="post">

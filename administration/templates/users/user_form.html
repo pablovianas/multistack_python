@@ -9,7 +9,13 @@ User Register
 {% block content %}
 <div class="card card-primary">
     <div class="card-header">
-        <div class="card-title">User Register</div>
+        <div class="card-title">
+            {% if request.resolver_match.url_name == 'user_register' %}
+                User Register
+            {% else %}
+                User Edit
+            {% endif %}
+        </div>
     </div>
     <div class="card-body">
         <form method="post">
