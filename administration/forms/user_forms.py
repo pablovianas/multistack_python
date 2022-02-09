@@ -1,6 +1,7 @@
 
 from django.contrib.auth.forms import UserCreationForm, UserChangeForm
 from django.contrib.auth import get_user_model
+from django import forms
 
 class UserForms(UserCreationForm):
     class Meta:
@@ -17,6 +18,10 @@ class UserForms(UserCreationForm):
 
 class EditUserForm(UserChangeForm):
     password = None
+    email = forms.CharField(
+        widget=forms.TextInput(attrs={'readonly':'readonly'})
+    )
+
     class Meta:
         model = get_user_model()
         fields = ['username', 'email', 'first_name']
