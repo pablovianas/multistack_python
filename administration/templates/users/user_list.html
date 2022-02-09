@@ -13,7 +13,9 @@ Users
         <table class="table table-condensed">
             <thead>
                 <tr>
-                    <th>Username</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>User</th>
                     <th>Actions</th>
                 
                 </tr>
@@ -24,11 +26,12 @@ Users
                 {% for i in users %}
 
                 <tr>
+                    <td>{{i.first_name}}</td>
+                    <td>{{i.email}}</td>
                     <td>{{i.username}}</td>
     
                     <td>
-                        <a href="#">Edit</a>
-                        <a href="#">Remove</a>
+                        <a href="{% url 'edit_user' i.id %}">Edit</a>
                     </td>
                 </tr>
 

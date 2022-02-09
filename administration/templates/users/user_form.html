@@ -14,39 +14,9 @@ User Register
     <div class="card-body">
         <form method="post">
             {% csrf_token %}
-            <div class="form-group">
-                {%bootstrap_field user_form.username%}
-            </div>
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="form-group">
-                        {%bootstrap_field user_form.password1%}
-                    </div>
-                </div>
-                
-                <div class="col-md-6">
-                    <div class="form-group">
-                        {%bootstrap_field user_form.password2%}
-                    </div>
-                </div>
+            {% bootstrap_form user_form %}
 
-            </div>
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="form-group">
-                        {%bootstrap_field user_form.first_name%}
-                    </div>
-                </div>
-                
-                <div class="col-md-6">
-                    <div class="form-group">
-                        {%bootstrap_field user_form.email%}
-                    </div>
-                </div>
-            </div>
-
-
-            <button class="btn btn-primary" type="submit">Register</button>
+            <button class="btn btn-primary" type="submit">Save</button>
         </form>
 
     </div>
